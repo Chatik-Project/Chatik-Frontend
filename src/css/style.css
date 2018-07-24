@@ -1,0 +1,38 @@
+.messagesWrap {
+    border: 1px solid powderblue;
+    overflow-y: scroll;
+    max-height: 500px;
+    min-height: 500px;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#messages li {
+    padding: 5px 10px;
+}
+
+#messages li  p {
+    margin: 0
+}
+
+#messages .user {
+    color: rgb(68, 101, 137);
+    font-size: 14px;
+    font-weight: bold
+}
+
+#messages .content {
+    font-size: 15px
+}
+
+.form {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-left: 1px solid powderblue;
+    border-right: 1px solid powderblue;
+    border-bottom: 1px solid powderblue
+}

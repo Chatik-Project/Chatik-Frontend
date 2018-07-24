@@ -6,6 +6,8 @@ import App from './App.vue';
 import { store } from './store/index.js';
 Vue.use(VueRouter);
 
+store.dispatch('chat/loadMessages');
+
 const router = new VueRouter({
     mode: "history",
     linkExactActiveClass: 'active',
