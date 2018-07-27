@@ -6,7 +6,10 @@ import App from './App.vue';
 import { store } from './store/index.js';
 Vue.use(VueRouter);
 
-store.dispatch('chat/loadMessages');
+store.dispatch('chat/listenMessages');
+store.dispatch('chat/loadLastMessages');
+
+store.dispatch('chat/changeName');
 
 const router = new VueRouter({
     mode: "history",

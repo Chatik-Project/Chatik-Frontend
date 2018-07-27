@@ -1,3 +1,6 @@
+#user-greeting {
+    cursor: crosshair;
+}
 .messagesWrap {
     border: 1px solid powderblue;
     overflow-y: scroll;
