@@ -1,6 +1,5 @@
 import io from 'socket.io-client';
 var socket = io('http://138.68.234.86:7777');
-
 const state = {
     messages: [],
     username: ''
@@ -22,7 +21,7 @@ const actions = {
         socket.emit('receiveHistory');
         socket.on('history', function (messages) {
             commit('setMessages', messages);
-        });
+        })
     },
     changeName({ commit, state }, name = null) {
         let defaultName = 'Anonymous' + Math.round(Math.random() * 1000000);

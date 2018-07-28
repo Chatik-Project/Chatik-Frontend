@@ -39,3 +39,10 @@
     border-right: 1px solid powderblue;
     border-bottom: 1px solid powderblue
 }
+
+.settings {
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("./../icons/settings-work-tool.svg");
+}

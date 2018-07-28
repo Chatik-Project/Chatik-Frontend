@@ -9,8 +9,9 @@
             </ul>
         </div>
         <form @submit.prevent="validateMessage" class="col-8 offset-2 form-group form form-inline">
-            <input type="text" v-model="content" class="form-control col-10" placeholder="Write a message..." required>
+            <input type="text" v-model="content" class="form-control col-9" placeholder="Write a message..." required>
             <input type="submit" class="btn btn-primary col-2" value="Send">
+            <router-link to="/settings" class="settings col-1"></router-link>
         </form>
     </div>
 </template>
