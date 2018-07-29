@@ -8,7 +8,6 @@ Vue.use(VueRouter);
 
 store.dispatch('chat/listenMessages');
 store.dispatch('chat/loadLastMessages');
-
 store.dispatch('chat/changeName');
 
 const router = new VueRouter({

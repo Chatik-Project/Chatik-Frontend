@@ -1,11 +1,18 @@
+#main, html {
+    background-color: rgb(237,238,240);
+}
+
 #user-greeting {
+    color: white;
     cursor: crosshair;
 }
-.messagesWrap {
-    border: 1px solid powderblue;
+
+.messages-wrap {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(227, 228, 232);
     overflow-y: scroll;
-    max-height: 500px;
-    min-height: 500px;
+    max-height: 87vh;
+    min-height: 87vh;
 }
 
 #messages {
@@ -32,17 +39,18 @@
     font-size: 15px
 }
 
-.form {
+.message-send {
+    background-color: rgb(250, 251, 252);
     padding-top: 20px;
     padding-bottom: 20px;
-    border-left: 1px solid powderblue;
-    border-right: 1px solid powderblue;
-    border-bottom: 1px solid powderblue
+    border-left: 1px solid rgb(227, 228, 232);
+    border-right: 1px solid rgb(227, 228, 232);
+    border-bottom: 1px solid rgb(227, 228, 232);
 }
 
 .settings {
-    height: 30px;
+    height: 35px;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("./../icons/settings-work-tool.svg");
+    background-image: url("../icons/settings.svg");
 }

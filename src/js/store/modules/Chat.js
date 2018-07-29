@@ -1,9 +1,10 @@
-import io from 'socket.io-client';
-var socket = io('http://138.68.234.86:7777');
+import { socket } from './../socketConfig.js';
 const state = {
     messages: [],
-    username: ''
+    username: '',
 };
+
+let averageWaitTime = 2000;
 
 const getters = {
     getMessages() {
@@ -24,16 +25,16 @@ const actions = {
         })
     },
     changeName({ commit, state }, name = null) {
-        let defaultName = 'Anonymous' + Math.round(Math.random() * 1000000);
-        if(name == null) {
-            if(state.username !== '') {
-                defaultName = state.username;
-            }
-        } else {
-            defaultName = name;
-        }
-        socket.emit('changeName', defaultName);
-        commit('setName', defaultName);
+        return new Promise((resolve, reject) => {
+            let defaultName = 'Anonymous' + Math.round(Math.random() * 1000000);
+            (name)? defaultName = name: (state.username) && (defaultName = state.username);
+            socket.emit('changeName', defaultName);
+            socket.on('nameChanged', msg => {
+                commit('setName', defaultName);
+                resolve(msg);
+            });
+            setTimeout(() => reject('Ошибка попробуйте позже'), averageWaitTime);
+        });
     },
     addMessage({ commit }, content) {
         socket.emit('msg', content);

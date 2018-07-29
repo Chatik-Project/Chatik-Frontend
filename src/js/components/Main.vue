@@ -1,15 +1,15 @@
 <template>
-    <div class="row">
-        <div class="messagesWrap col-8 offset-2">
-            <ul id="messages" class="col-8 offset-2" v-for="message in chat.messages">
+    <div>
+        <div class="messages-wrap">
+            <ul id="messages" v-for="message in chat.messages">
                 <li>
                     <p class="user">{{ message.username }}</p>
                     <p class="content">{{ message.content }}</p>
                 </li>
             </ul>
         </div>
-        <form @submit.prevent="validateMessage" class="col-8 offset-2 form-group form form-inline">
-            <input type="text" v-model="content" class="form-control col-9" placeholder="Write a message..." required>
+        <form @submit.prevent="validateMessage" class="form-group message-send form-inline">
+            <input type="text" v-model="content" class="form-control col-8 offset-1" placeholder="Write a message..." required>
             <input type="submit" class="btn btn-primary col-2" value="Send">
             <router-link to="/settings" class="settings col-1"></router-link>
         </form>

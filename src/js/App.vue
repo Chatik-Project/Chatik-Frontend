@@ -1,14 +1,14 @@
 <template>
-    <main class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a id="user-greeting">Привет, {{ chat.username }}</a>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <main id="main" class="col-12">
+        <nav class="navbar navbar-expand navbar-dark bg-primary row">
+            <a id="user-greeting" class="col-4 offset-2">Hi, {{ chat.username }}</a>
+            <div class="collapse navbar-collapse justify-content-end col-2 offset-2" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><router-link to="/" class="nav-link">Главная</router-link></li>
+                    <li class="nav-item"><router-link to="/" class="nav-link">Let's chat</router-link></li>
                 </ul>
             </div>
         </nav>
-        <div>
+        <div class="col-8 offset-2">
             <router-view></router-view>
         </div>
     </main>
