@@ -4,7 +4,7 @@
             <p class="alert alert-danger col-12" v-if="error">{{ error }}</p>
             <p class="alert alert-success col-12" v-if="success">{{ success }} redirect {{ seconds }}...</p>
             <input type="text" class="form-control col-8 offset-1" placeholder="Your new name..." v-model="newName" required>
-            <input type="submit" class="btn btn-primary col-2" value="Save">
+            <input type="submit" class="btn btn-custom-green col-2" value="Save">
         </form>
     </div>
 </template>

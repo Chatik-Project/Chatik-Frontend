@@ -10,7 +10,7 @@
         </div>
         <form @submit.prevent="validateMessage" class="form-group message-send form-inline">
             <input type="text" v-model="content" class="form-control col-8 offset-1" placeholder="Write a message..." required>
-            <input type="submit" class="btn btn-primary col-2" value="Send">
+            <input type="submit" class="btn btn-custom-green col-2" value="Send">
             <router-link to="/settings" class="settings col-1"></router-link>
         </form>
     </div>
