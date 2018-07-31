@@ -1,2 +1,1 @@
-<h1>Chatik - Frontend</h1>
-Screen shoots - https://yadi.sk/d/HAleTaoF3ZWjvh
+<h1>This branch is only for tests</h1>

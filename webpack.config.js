@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
+const JavaScriptObfuscator = require('webpack-obfuscator');
 
 module.exports = {
     entry: './src/js/app.js',
@@ -33,7 +34,10 @@ module.exports = {
         }),
         new CleanWebpackPlugin(['dist']),
         new VueLoaderPlugin(),
-        new UglifyJsPlugin()
+        new UglifyJsPlugin(),
+        new JavaScriptObfuscator ({
+            rotateUnicodeArray: true
+        }, ['app.js'])
     ],
 
     module: {
