@@ -43,6 +43,7 @@ const config = {
             },
             {
                 test: /\.vue$/,
+                exclude: /node_modules/,
                 loader: 'vue-loader'
             },
             {
@@ -60,6 +61,11 @@ const config = {
             }
         ]
     },
+    optimization: {
+    splitChunks: {
+        chunks: "initial"
+    }
+}
 };
 
 module.exports = (env, argv) => {
@@ -99,23 +105,27 @@ module.exports = (env, argv) => {
             }, "vendors~main.js"),
             new UglifyJsPlugin(),
         );
-        config.optimization = {
-            splitChunks: {
-                chunks: "initial"
-            },
-            minimizer: [
-                new UglifyJsPlugin({
-                    cache: true,
-                    parallel: true,
-                    uglifyOptions: {
-                        compress: false,
-                        ecma: 6,
-                        mangle: true
-                    },
-                    sourceMap: false
-                })
-            ]
-        }
+        config.optimization.minimizer = [
+            new UglifyJsPlugin({
+                cache: true,
+                parallel: true,
+                uglifyOptions: {
+                    compress: false,
+                    ecma: 5,
+                    mangle: true
+                },
+                sourceMap: false
+            })
+        ];
+        config.module.rules.push(
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        );
     } else {
         config.mode = "development";
     }
